@@ -9,7 +9,7 @@ class CustomUserTests(TestCase):
         user = User.objects.create_user(
             username='brandon',
             email='brandon@email.com',
-            password='testpass123',
+            password='12345',
         )
         self.assertEqual(user.username, 'brandon')
         self.assertEqual(user.email, 'brandon@email.com')
