@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Local
-    'accounts', # new
+    'accounts',
+    'pages', # new
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS':[str(BASE_DIR.joinpath('templates'))], # new
     },
 ]
 
