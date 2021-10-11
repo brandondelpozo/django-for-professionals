@@ -32,18 +32,21 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth', # Yohoo!!!!
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # new
 
     # Third-party
-    'crispy_forms', # new
+    'crispy_forms',
+    'allauth', # new
+    'allauth.account', # new
 
     # Local
     'accounts',
-    'pages', # new
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -139,8 +142,14 @@ STATICFILES_FINDERS = [ # new
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# django-allauth config
 LOGIN_REDIRECT_URL = 'home'
-
-LOGOUT_REDIRECT_URL = 'home'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
+ACCOUNT_LOGOUT_REDIRECT = 'home' # new
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backend.AuthenticationBackend',
+)
+EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
