@@ -142,7 +142,8 @@ STATICFILES_FINDERS = [ # new
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
@@ -150,6 +151,7 @@ ACCOUNT_LOGOUT_REDIRECT = 'home' # new
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backend.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
+ACCOUNT_SESSION_REMEMBER = True # new

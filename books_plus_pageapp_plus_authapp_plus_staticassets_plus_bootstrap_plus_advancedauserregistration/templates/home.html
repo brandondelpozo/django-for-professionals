@@ -7,11 +7,11 @@
   <h1>Homepage</h1>
   <img class="bookcover" src="{% static 'images/dfp.png' %}">
   {% if user.is_authenticated %}
-    Hi {{ user.email }}!
-    <p><a href="{% url 'logout' %}"">Log Out</p>
+    <p>Hi {{ user.email }}!</p>
+    <p><a href="{% url 'account_logout' %}">Log Out</p>
   {% else %}
     <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <p><a href="{% url 'account_login' %}">Log In</a></p> |
+    <a href="{% url 'account_signup' %}">Sign Up</a>
   {% endif %}
 {% endblock content %}
