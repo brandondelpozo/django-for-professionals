@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # new
+    'django.contrib.sites',
 
     # Third-party
     'crispy_forms',
     'allauth', # new
     'allauth.account', # new
+    'allauth.socialaccount', # new   
+    'allauth.socialaccount.providers.github', # new    
 
     # Local
     'accounts',
@@ -147,6 +149,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_EMAIL_VERIFICATION = 'none' # to set social authentication
 ACCOUNT_LOGOUT_REDIRECT = 'home'
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
@@ -155,9 +158,9 @@ AUTHENTICATION_BACKENDS = (
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False # new
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
-ACCOUNT_USERNAME_REQUIRED = False # new
-ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
-ACCOUNT_EMAIL_REQUIRED = True # new
-ACCOUNT_UNIQUE_EMAIL = True # new
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
