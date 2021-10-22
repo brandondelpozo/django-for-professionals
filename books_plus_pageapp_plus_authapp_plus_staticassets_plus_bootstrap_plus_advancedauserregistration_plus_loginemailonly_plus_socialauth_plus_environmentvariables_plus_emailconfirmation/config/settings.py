@@ -146,7 +146,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_EMAIL_VERIFICATION = 'none' # to set social authentication
+#ACCOUNT_EMAIL_VERIFICATION = 'none' # to set social authentication
 ACCOUNT_LOGOUT_REDIRECT = 'home'
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
