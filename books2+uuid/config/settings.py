@@ -163,3 +163,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com' # email sender configuration
+
+MEDIA_URL = '/media/'  # new
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))  # new
