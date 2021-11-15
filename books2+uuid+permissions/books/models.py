@@ -42,5 +42,5 @@ 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
 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
 git remote set-url origin https://<USERNAME>:<PASSWORD>@bitbucket.org/path/to/repo.git
 https://github.com/brandondelpozo/django-for-professionals.git
-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
+git remote set-url origin https://github.com/brandondelpozo/django-for-professionals.git
 """
