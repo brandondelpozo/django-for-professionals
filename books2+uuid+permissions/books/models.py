@@ -34,7 +34,7 @@ class Review(models.Model):  # new
     )
 
     def __str__(self):
-        """test comm 12"""
+        """test comm 13"""
         return self.review
 """
 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
