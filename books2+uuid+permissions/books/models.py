@@ -34,7 +34,7 @@ class Review(models.Model):  # new
     )
 
     def __str__(self):
-        """test comm 5"""
+        """test comm 6"""
         return self.review
 """
 git remote set-url origin https://<USERNAME>:<PASSWORD>@bitbucket.org/path/to/repo.git
