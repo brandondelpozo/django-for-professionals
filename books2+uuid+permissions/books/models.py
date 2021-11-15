@@ -36,3 +36,9 @@ class Review(models.Model):  # new
     def __str__(self):
         """test comm 4"""
         return self.review
+"""
+git remote set-url origin https://<USERNAME>:<PASSWORD>@bitbucket.org/path/to/repo.git
+https://github.com/brandondelpozo/django-for-professionals.git
+git remote set-url origin https://<brandondelpozo>:<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>github.com/brandondelpozo/django-for-professionals.git
+
+"""
