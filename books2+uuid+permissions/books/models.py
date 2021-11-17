@@ -35,3 +35,5 @@ class Review(models.Model):  # new
 
     def __str__(self):
         return self.review
+
+# just a test for github
