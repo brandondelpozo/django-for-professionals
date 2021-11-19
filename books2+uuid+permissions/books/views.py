@@ -1,5 +1,5 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView # new
+from django.contrib.auth.mixins import LoginRequiredMixin # new
+from django.views.generic import ListView, DetailView
 from .models import Book
 
 class BookListView(LoginRequiredMixin, ListView):  # new
@@ -9,7 +9,7 @@ class BookListView(LoginRequiredMixin, ListView):  # new
     login_url = 'account_login'  # new
 
 
-class BookDetailView(DetailView): # new
+class BookDetailView(LoginRequiredMixin, DetailView): # new
     model = Book
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
