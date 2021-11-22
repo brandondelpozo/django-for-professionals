@@ -22,3 +22,11 @@ class BookDetailView(
     template_name = 'books/book_detail.html'
     login_url = 'account_login'
     permission_required = 'books.special_status' # new
+
+
+"""
+In chapter 13: Permissions we cover this mixins (for class based views)
+    LoginRequiredMixin
+    PermissionRequiredMixin
+    UserPassesTestMixin
+"""
