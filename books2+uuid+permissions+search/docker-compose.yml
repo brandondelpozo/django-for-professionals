@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python /djangoforprofessionals/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/djangoforprofessionals
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SECRET_KEY=&3yd&yszxsq6ar2tsv#5k1+oheevma$l1mi+3$$dl8gos%-+q3"
+      - "DJANGO_DEBUG=True"
+  db:
+    image: postgres:11
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+volumes:
+  postgres_data:
