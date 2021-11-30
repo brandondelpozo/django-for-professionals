@@ -29,6 +29,7 @@ class SearchResultsListView(ListView): # new
     model = Book
     context_object_name = 'book_list'
     template_name = 'books/search_results.html'
+    queryset = Book.objects.filter(title__icontains='beginners') # new
 
 
 """
