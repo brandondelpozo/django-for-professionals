@@ -37,4 +37,5 @@ In chapter 13: Permissions we cover this mixins (for class based views)
     LoginRequiredMixin
     PermissionRequiredMixin
     UserPassesTestMixin
+    
 """
