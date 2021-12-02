@@ -1,7 +1,7 @@
 from re import template
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
-    PermissionRequiredMixin # new
+    PermissionRequiredMixin
 )
 from django.views.generic import ListView, DetailView
 from .models import Book
