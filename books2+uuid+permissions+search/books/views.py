@@ -1,3 +1,4 @@
+from django.db.models import Q # new
 from re import template
 from django.contrib.auth.mixins import (
     LoginRequiredMixin,
@@ -25,12 +26,15 @@ class BookDetailView(
     permission_required = 'books.special_status'
 
 
-class SearchResultsListView(ListView): # new
+class SearchResultsListView(ListView):
     model = Book
     context_object_name = 'book_list'
-    template_name = 'books/search_results.html'
-    queryset = Book.objects.filter(title__icontains='beginners') # new
-
+    template_name = 'books/book_list.html'
+    
+    def get_queryset(self): # new
+        return Book.objects.filter(
+            Q(title__icontains='beginners') | Q(title__icontains='api')
+        )
 
 """
 In chapter 13: Permissions we cover this mixins (for class based views)
