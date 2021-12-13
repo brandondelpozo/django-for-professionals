@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',    
+    'allauth.socialaccount.providers.github',
+    'debug_toolbar', # new    
 
     # Local
     'accounts',
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # new
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -166,3 +168,8 @@ DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com' # email sender configuration
 
 MEDIA_URL = '/media/'  # new
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))  # new
+
+# django-debug-toolbar
+import socket
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
