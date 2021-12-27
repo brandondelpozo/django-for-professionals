@@ -14,7 +14,7 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', blank=True)
 
-    class Meta: # new
+    class Meta:
         indexes = [ 
             models.Index(fields=['id'], name='id_index'),
         ]
@@ -29,7 +29,7 @@ class Book(models.Model):
         return reverse('book_detail', args=[str(self.id)])
 
 
-class Review(models.Model):  # new
+class Review(models.Model):
     book = models.ForeignKey(
         Book,
         on_delete=models.CASCADE,
