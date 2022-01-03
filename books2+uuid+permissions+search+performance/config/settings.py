@@ -149,7 +149,7 @@ STATICFILES_FINDERS = [ # new
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # django-crispy-forms
-CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
