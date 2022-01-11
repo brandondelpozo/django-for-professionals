@@ -49,7 +49,7 @@ class BookTests(TestCase):
             '%s?next=/books/' % (reverse('account_login')))
         self.assertContains(response, 'Log In')
 
-    def test_book_detail_view_with_permissions(self): # new
+    def test_book_detail_view_with_permissions(self):
         self.client.login(email='reviewuser@email.com', password='testpass123')
         self.user.user_permissions.add(self.special_permission)
         response = self.client.get(self.book.get_absolute_url())
