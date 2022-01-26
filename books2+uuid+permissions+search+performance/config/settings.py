@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware', # new
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 CACHE_MIDDLEWARE_ALIAS = 'default'
