@@ -32,7 +32,7 @@ class BookTests(TestCase):
         self.assertEqual(f'{self.book.author}', 'JK Rowling')
         self.assertEqual(f'{self.book.price}', '25.00')
 
-    def test_book_list_view_for_logged_in_user(self): # new
+    def test_book_list_view_for_logged_in_user(self):
         self.client.login(email='reviewuser@email.com', password='testpass123')
         response = self.client.get(reverse('book_list'))
         self.assertEqual(response.status_code, 200)
